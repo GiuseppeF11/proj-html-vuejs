@@ -29,15 +29,14 @@ export default {
 </script>
 
 <template>
-    <h1>
-        Mia App
-    </h1>
-
     <AppHeader />
 
     <AppMain />
 
     <AppFooter />
+
+    <!-- Componente per avere ad URL diversi, contenuti diversi -->
+    
 </template>
 
 <style lang="scss">

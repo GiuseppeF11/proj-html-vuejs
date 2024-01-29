@@ -12,11 +12,11 @@ export default {
 </script>
 
 <template>
-
     <main>
-        <router-view></router-view>
+        <h1>
+            HOME
+        </h1>
     </main>
-
 </template>
 
 <style lang="scss" scoped>
