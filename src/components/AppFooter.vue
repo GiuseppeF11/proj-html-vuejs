@@ -2,7 +2,62 @@
 export default {
     data() {
         return {
-
+            getStarted: [
+                {
+                    title:'Resources'
+                },
+                {
+                    title:'Tutorials'
+                },
+                {
+                    title:'Examples'
+                },
+                {
+                    title:'Docs'
+                },
+            ],
+            about: [
+                {
+                    title:'Stories'
+                },
+                {
+                    title:'Community'
+                },
+                {
+                    title:'Blog'
+                },
+                {
+                    title:'Brand Assets'
+                },
+            ],
+            features: [
+                {
+                    title:'Overview'
+                },
+                {
+                    title:'Design'
+                },
+                {
+                    title:'Code'
+                },
+                {
+                    title:'Collaborate'
+                },
+            ],
+            quickLinks: [
+                {
+                    title:'Stories'
+                },
+                {
+                    title:'Community'
+                },
+                {
+                    title:'Blog'
+                },
+                {
+                    title:'Brand Assets'
+                },
+            ]
         };
     },
     methods: {
@@ -23,101 +78,25 @@ export default {
                     <div class="footer-list col-2 text-white">
                         <h4>GET STARTED</h4>
                         <ul>
-                            <li>
-                                <a href="">
-                                    Resources
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Tutorials
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Examples
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Docs
-                                </a>
-                            </li>
+                            <li v-for="(singleElem, i) in getStarted"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
                     <div class="footer-list col-2">
                         <h4>ABOUT</h4>
                         <ul>
-                            <li>
-                                <a href="">
-                                    Stories
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Community
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Brand Assets
-                                </a>
-                            </li>
+                            <li v-for="(singleElem, j) in about"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
                     <div class="footer-list col-2">
                         <h4>FEATURES</h4>
                         <ul>
-                            <li>
-                                <a href="">
-                                    Overview
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Design
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Code
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Collaborate
-                                </a>
-                            </li>
+                            <li v-for="(singleElem, x) in features"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
                     <div class="footer-list col-2">
                         <h4>QUICK LINKS</h4>
                         <ul>
-                            <li>
-                                <a href="">
-                                    Stories
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Community
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Brand
-                                </a>
-                            </li>
+                            <li v-for="(singleElem, y) in quickLinks"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
                     <div class="nl-subscribe col-4">
@@ -139,7 +118,7 @@ export default {
                     </div>
 
                     <div id="copyright">
-                        <p>&copy; Anime Tech, Theme by HasnainDEV</p>
+                        <div>&copy; Anime Tech, Theme by HasnainDEV</div>
                     </div>
                 </div>
             </div>
@@ -180,15 +159,10 @@ footer {
 
                 li {
                     margin-bottom: 10px;
-                }
-
-                li > a {
-                    text-decoration: none;
                     color: white;
-
                 }
 
-                li > a:hover {
+                li:hover {
                     color: #333333;
                     transition: 0.3s;
                 }
@@ -207,13 +181,16 @@ footer {
                     margin-bottom: 0.8rem;
                 }
 
+                .form-control:focus {
+                    box-shadow: none;
+                }
                 button {
                     width: 100%;
                     border: none;
                     font-weight: 600;
                     padding-top: 0.8rem;
                     padding-bottom: 0.8rem;
-                    background-color: #333333;
+                    background-color: #545454;
                     color: white;
                 }
 
@@ -242,7 +219,6 @@ footer {
             #copyright {
                 font-weight: 600;
                 color: white;
-
             }
         }
     }

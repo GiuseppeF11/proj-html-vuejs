@@ -14,43 +14,44 @@ export default {
 <template>
     <header>
         <!-- HEADER TOP -->
-            <div class="header-top">
+            <section class="header-top">
                 <div class="container h-100">
-                <div class="row h-100 text-center text-light">
-                    <div class="col-auto updates fw-bold fs-6 d-flex align-items-center">
-                        NEWS UPDATES
-                    </div>
+                    <div class="row h-100 text-center text-light">
+                        <div class="col-auto updates fw-bold fs-6 d-flex align-items-center">
+                            NEWS UPDATES
+                        </div>
 
-                    <!-- CAROSELLO IMG/ORA/TITOLO -->
-                    <div class="col-auto d-flex align-items-center p-0">
-                        <div class="img-box">
-                            <img src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/healthy-foods-150x150.webp" alt="">
+                        <!-- CAROSELLO IMG/ORA/TITOLO -->
+                        <div class="col-auto d-flex align-items-center p-0">
+                            <div class="img-box">
+                                <div class="triangle-right"></div>
+                                <img src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/healthy-foods-150x150.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="col-auto d-flex align-items-center ">
+                            <span class="fw-medium"> 5:30 </span>
+                        </div>
+                        <div class="col d-flex align-items-center">
+                            <a class="fs-5 fw-medium current-title">"The Best Winter Outfits"</a>
+                        </div>
+                        <!-- FRECCIE SCORRIMENTO CAROSELLO -->
+                        <div class="col-auto d-flex align-items-center">
+                            <i class="fa-solid fa-angle-left angle"></i>
+                            <i class="fa-solid fa-angle-right angle"></i>
+                        </div>
+                        <!-- BRANDS -->
+                        <div class="col-auto d-flex align-items-center p-0">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-youtube"></i>
                         </div>
                     </div>
-                    <div class="col-auto d-flex align-items-center ">
-                        <span class="fw-medium"> 5:30 </span>
-                    </div>
-                    <div class="col d-flex align-items-center">
-                        <a class="fs-5 fw-medium current-title">"The Best Winter Outfits"</a>
-                    </div>
-                    <!-- FRECCIE SCORRIMENTO CAROSELLO -->
-                    <div class="col-auto d-flex align-items-center">
-                        <i class="fa-solid fa-angle-left angle"></i>
-                        <i class="fa-solid fa-angle-right angle"></i>
-                    </div>
-                    <!-- BRANDS -->
-                    <div class="col-auto d-flex align-items-center p-0">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-youtube"></i>
-                    </div>
                 </div>
-            </div>
-            </div>
+            </section>
 
         <!-- HEADER MIDDLE -->
-            <div class="container">
+            <section class="container">
                 <div class="row header-middle">
                     <div class="col-auto p-0 img-box">
                         <a href="/">
@@ -61,20 +62,20 @@ export default {
                         <img src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/header-banner.webp" class="rounded-1" alt="">
                     </div>
                 </div>   
-            </div>           
+            </section>           
             
             <hr>
             
         <!-- HEADER BOTTOM -->
-            <div class="container header-bottom p-0">
-                <div class="row">
+            <section class="container">
+                <div class="row header-bottom">
 
-                    <!-- BUTTON OFFCANVAS -->
-                    <div class="col-auto">
-                        <button class="btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <!-- BUTTON OFFCANVAS HAMBURGER -->
+                    <div class="col-auto p-0" id="hamburger">
+                        <button class="btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHamburger" aria-controls="offcanvasHamburger">
                             <i class="fa-solid fa-bars"></i>
                         </button>
-                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasHamburger" aria-labelledby="offcanvasHamburgerLabel">
                             <!-- OFFCANVAS HEADER -->
                             <div class="offcanvas-header">
                                 <div class="btn-box">
@@ -143,20 +144,83 @@ export default {
                         </div>
                     </div>
                     <!-- LINK HEADER BOTTOM -->
-                    <div class="col">
-                        <ul>
-                            <li>link</li>
-                            <li>link</li>
-                            <li>link</li>
-                            <li>link</li>
-                            <li>link</li>
-                        </ul>
-                    </div>
-                    <div class="col-auto">
-
+                    
+                    <ul class="col m-0 d-flex align-items-center justify-content-center">
+                        <li class="active-link">
+                            <i class="fa-solid fa-house-chimney"></i>
+                            <a href="/">HOME</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user"></i>
+                            <a href="/aboutus">ABOUT US</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-suitcase"></i>
+                            <a href="/">LIFESTYLE</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </li>
+                        <li class="">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                            <a href="/">STORIES</a>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </li>
+                        <li class="">
+                            <i class="fa-solid fa-book"></i>
+                            
+                            <div class="dropdown">
+                                <a class="pages-btn">PAGES
+                                    <div class="dropdown-content">
+                                        <a href="#">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            <span>SEARCH RESULT</span>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-box-archive"></i>
+                                            <span>CATEGORY ARCHIVE</span>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-circle-user"></i>
+                                            <span>AUTHOR ARCHIVE</span>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-calendar-days"></i>
+                                            <span>DATE ARCHIVE</span>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-bug"></i>
+                                            <span>ERROR 404</span>
+                                        </a>
+                                    </div>
+                                </a>
+                            </div>
+                        
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="/contactus">CONTACT US</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- BUTTON OFFCANVAS GLASS -->
+                    <div class="col-auto" id="glass">
+                        <button class="btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
+        
+                            <!-- OFFCANVAS BODY -->
+                            <div class="offcanvas-body" >
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="css-input" placeholder="Search..."/>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
     </header>
 </template>
 
@@ -215,6 +279,16 @@ background-color:#BF1C2D;
 
     .img-box {
         width: 40px;
+        position: relative;
+        
+        .triangle-right {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-left: 8px solid #BC1C2F;
+            border-bottom: 20px solid transparent;
+        }
     }
     .row {
 
@@ -244,6 +318,12 @@ background-color:#BF1C2D;
 
 .header-bottom {
     color: rgb(35, 35, 35);
+    display: flex;
+    align-items: center;
+
+    a {
+        color: #3e3e3e;
+    }
 
     .btn {
         color: rgb(35, 35, 35);
@@ -254,43 +334,43 @@ background-color:#BF1C2D;
         }
     }
 
-    .offcanvas-start {
-            transition: 1.8s;
+    #hamburger button, #glass button{
+        border: none;
+    }
 
-        }
+    #hamburger .offcanvas-start {
+        transition: 1.5s;
+    }
 
-    .offcanvas {
+    #hamburger .offcanvas {
         width: 40%;
         text-align: center;
         padding: 10px 20px;
 
-        .offcanvas-header {
+        .btn-box {
+            position: absolute; left: 100%; top: 0;
+            width: 60px;
+            height: 50px;
+            display: flex;
 
-            .btn-box {
-                position: absolute; left: 100%; top: 0;
-                width: 60px;
-                height: 50px;
+            .button-close {
+                width: 100%;
+                height: 100%;
                 display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #BC1C2F;
+                border: none;
+                transition: 0.5s;
 
-                .button-close {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                &:hover {
                     background-color: #545454;
-                    border: none;
                     transition: 0.5s;
-
-                    &:hover {
-                        background-color: #BC1C2F;
-                        transition: 0.5s;
-                    }
-                    
-                    i {
-                        color: rgb(255, 255, 255);
-                        font-size: 30px;
-                    }
+                }
+                
+                i {
+                    color: rgb(255, 255, 255);
+                    font-size: 30px;
                 }
             }
         }
@@ -349,6 +429,116 @@ background-color:#BF1C2D;
 
         }
 
+    }
+
+    #glass .offcanvas-start {
+        transition: 1.5s;
+    }
+
+    #glass .offcanvas {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.76);
+        text-align: center;
+        padding: 10px 20px;
+        color: rgb(208, 208, 208);
+        .offcanvas-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .row {
+                width: 50%;
+                height: 60px;
+
+                .css-input {
+                    text-align: center;
+                    width: 80%;
+                    padding: 20px 15px;
+                    font-size: 25px;
+                    border-width: 0px;
+                    background-color: rgba(0, 0, 0, 0);
+                    color: #000000;
+                    border-style: solid;
+                    border-radius: 0px;
+                    box-shadow: 0px 0px 16px rgba(203,203,203,.75);
+                    text-shadow: -50px 0px 0px rgba(66,66,66,.0);
+                }
+                .css-input:focus {
+                    outline:none;
+                }
+            }
+        }
+
+    }
+
+    ul {
+
+        li {
+            margin: 0 10px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            font-weight: 500;
+            cursor: pointer;
+
+            &.active-link {
+                color: #BF1D2E;
+                a {
+                    color: #BF1D2E;
+                }
+            }
+
+            &:hover {
+                    color: #BF1D2E;
+
+                    a {
+                        color: #BF1D2E;
+                    }
+                }
+
+            a {
+                padding: 0 10px;
+            }
+
+            .pages-btn {
+                border: none;
+                background-color: none;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute; top: 36px;
+                background-color: #f1f1f1;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                display: flex;
+                color: black;
+                padding: 5px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: small;
+
+                i {
+                    width: 15%;
+                }
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #3e8e41;
+            }
+        }
     }
 }
 

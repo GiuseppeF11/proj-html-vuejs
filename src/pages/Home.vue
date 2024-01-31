@@ -19,12 +19,12 @@ export default {
                 <div class="row">
                     <div class="col-3 ">
                         <div class="card-section1">
-                            <div class="card text-bg-dark border-0">
+                            <div class="card-section-main text-bg-dark border-0">
                                 <img src="../../public/anime-fashion.webp" class="card-img" alt="...">
                                 <div class="card-img-overlay card-poster">
                                     <div class="text-center ">
-                                        <span class="badge  text-bg-light px-3 mx-2 py-2 fw-semibold">Fashion</span>
-                                        <span class="badge  text-bg-light px-3 py-2 fw-semibold ">Lifestyle</span>
+                                        <span class="badge  text-bg-light -3 mx-2 py-2 fw-semibold">Fashion</span>
+                                        <span class="badge  text-bg-light -3 py-2 fw-semibold ">Lifestyle</span>
                                     </div>
                                     
                                     <div class="text-overlay text-center">
@@ -40,12 +40,12 @@ export default {
                         </div>
 
                         <div>  
-                            <div class="card text-bg-dark mt-3 border-0">
+                            <div class="card-section-main text-bg-dark mt-3 border-0">
                                 <img src="../../public/travel-alone-300x200.webp" class="card-img" alt="...">
                                 <div class="card-img-overlay">
                                     <div class="text-center ">
-                                        <span class="badge  text-bg-light px-3 mx-2 py-2 fw-semibold">Stories</span>
-                                        <span class="badge  text-bg-light px-3 py-2 fw-semibold ">Travel</span>
+                                        <span class="badge  text-bg-light -3 mx-2 py-2 fw-semibold">Stories</span>
+                                        <span class="badge  text-bg-light -3 py-2 fw-semibold ">Travel</span>
                                     </div>
                                     <div class="text-overlay text-center">
                                         <span><i class="fa-solid fa-user"></i></span>
@@ -61,13 +61,13 @@ export default {
                     </div>
 
                     <div class="col-6 ">
-                        <div class="card text-bg-dark border-0">
+                        <div class="card-section-main text-bg-dark border-0">
                             <img src="../../public/best-places.webp" class="card-img" alt="...">
                             <div class="card-img-overlay">
                                 <div class="text-center ">
-                                        <span class="badge  text-bg-light px-3 mx-2 py-2 fw-semibold">Lifestyle</span>
-                                        <span class="badge  text-bg-light px-3 py-2 fw-semibold ">Stories</span>
-                                        <span class="badge  text-bg-light px-3 py-2 mx-2 fw-semibold ">Travel</span>
+                                        <span class="badge  text-bg-light -3 mx-2 py-2 fw-semibold">Lifestyle</span>
+                                        <span class="badge  text-bg-light -3 py-2 fw-semibold ">Stories</span>
+                                        <span class="badge  text-bg-light -3 py-2 mx-2 fw-semibold ">Travel</span>
                                 </div>
                                 <div class="text-overlay-center text-center">
                                     <span><i class="fa-solid fa-user"></i></span>
@@ -83,12 +83,12 @@ export default {
 
                     <div class="col-3">
                         <div>
-                            <div class="card text-bg-dark border-0">
+                            <div class="card-section-main text-bg-dark border-0">
                                 <img src="../../public/music-love.webp" class="card-img" alt="...">
                                 <div class="card-img-overlay">
                                     <div class="text-center ">
-                                        <span class="badge  text-bg-light px-3 mx-2 py-2 fw-semibold">Culture</span>
-                                        <span class="badge  text-bg-light px-3 py-2 fw-semibold ">Lifestyle</span>
+                                        <span class="badge  text-bg-light -3 mx-2 py-2 fw-semibold">Culture</span>
+                                        <span class="badge  text-bg-light -3 py-2 fw-semibold ">Lifestyle</span>
                                     </div>
                                     <div class="text-overlay text-center">
                                         <span><i class="fa-solid fa-user"></i></span>
@@ -103,12 +103,12 @@ export default {
                         </div>
 
                         <div>
-                            <div class="card text-bg-dark mt-3 border-0">
+                            <div class="card-section-main text-bg-dark mt-3 border-0">
                                 <img src="../../public/visit-france.webp" class="card-img" alt="...">
                                 <div class="card-img-overlay">
                                     <div class="text-center ">
-                                        <span class="badge  text-bg-light px-3 py-2 fw-semibold ">Lifestyle</span>
-                                        <span class="badge  text-bg-light px-3 mx-2 py-2 fw-semibold">Travel</span>
+                                        <span class="badge  text-bg-light -3 py-2 fw-semibold ">Lifestyle</span>
+                                        <span class="badge  text-bg-light -3 mx-2 py-2 fw-semibold">Travel</span>
                                     </div>
                                     <div class="text-overlay text-center">
                                         <span><i class="fa-solid fa-user"></i></span>
@@ -146,11 +146,11 @@ export default {
 
                 <div class="row">
                     <div class="col-7">
-                        <div class="card text-bg-dark mt-3 border-0">
+                        <div class="card-section-main text-bg-dark mt-3 border-0">
                             <img src="../../public/music-love.webp" class="card-img" alt="...">
                             <div class="card-img-overlay padding-badge-pers">
                                 <div class="">
-                                    <span class="badge  text-bg-light px-3 mx-2 py-2 fw-semibold">Culture</span>
+                                    <span class="badge  text-bg-light -3 mx-2 py-2 fw-semibold">Culture</span>
                                 </div>
                                 <div class="text-overlay card-lifestyle-text">
                                     <span><i class="fa-solid fa-user"></i></span>
@@ -166,11 +166,11 @@ export default {
 
                     <div class="col-5">
                         <div class="flex-lifestyle">
-                            <div class="card mt-3 border-0 card-lifestyle">
+                            <div class="card-section-main mt-3 border-0 card-lifestyle">
                                 <img src="../../public/visit-france.webp" alt="" class="card-img">
                                 <div class="card-img-overlay">
                                     
-                                    <span class="badge text-bg-light px-3 py-1 fw-semibold">Lifestyle</span>
+                                    <span class="badge text-bg-light -3 py-1 fw-semibold">Lifestyle</span>
                                     
                                 </div>
                             </div>
@@ -187,11 +187,11 @@ export default {
                         <hr>
 
                         <div class="flex-lifestyle">
-                            <div class="card border-0 card-lifestyle">
+                            <div class="card-section-main border-0 card-lifestyle">
                                 <img src="../../public/ideas-anime.webp" alt="" class="card-img">
                                 <div class="card-img-overlay">
                                     
-                                    <span class="badge text-bg-light px-3 py-1 fw-semibold">Culture</span>
+                                    <span class="badge text-bg-light -3 py-1 fw-semibold">Culture</span>
                                     
                                 </div>
                             </div>
@@ -208,11 +208,11 @@ export default {
                         <hr>
 
                         <div class="flex-lifestyle">
-                            <div class="card border-0 card-lifestyle">
+                            <div class="card-section-main border-0 card-lifestyle">
                                 <img src="../../public/anime-fashion.webp" alt="" class="card-img">
                                 <div class="card-img-overlay">
                                     
-                                    <span class="badge text-bg-light px-3 py-1 fw-semibold">Fashion</span>
+                                    <span class="badge text-bg-light -3 py-1 fw-semibold">Fashion</span>
                                     
                                 </div>
                             </div>
@@ -238,85 +238,319 @@ export default {
                     <img src="../../public/page-banner-1.webp" alt="" class="rounded-2 w-100">
                 </div>
             </div>
+        </section>                              <!--FINE SEZIONE 4 COMPLETA -->
+
+        <section>
+            <div class="container">
+                <div class="flex-section mb-2 mt-3">
+                    <div>
+                        <h4>
+                            FEATURED POSTS
+                        </h4>
+                    </div>
+
+                    <div>
+                        
+                    </div>
+                </div>
+
+                <div class="card-carousel">
+                    <div class="card card-carousel-width" style="width: 25rem;">
+                        <img src="../../public/anime-fashion.webp" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Card title</h5>
+                            <p class="text-center">25 December 2023</p>
+                            <p class="card-text text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi amet nulla sint deserunt...</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+
+
+        <section class="mt-4 mb-3">             <!-- SEZIONE 7 COMPLETA -->
+            <div class="flex-footer-top">
+                <div class="">
+                    <div class="card-pers">
+                        <h5 class="text-center">FASHION</h5>
+                        <img src="../../public/anime-fashion.webp" class="img-card-pers" alt="">
+                        <div class="white-square">
+                            <h5 class="text-center">3 POSTS</h5>
+                        </div>
+                        <div class="overlay-pers"></div>
+                        
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="card-pers">
+                        <h5 class="text-center">CULTURE</h5>
+                        <img src="../../public/success-story.webp" class="img-card-pers" alt="">
+                        <div class="white-square">
+                            <h5 class="text-center">3 POSTS</h5>
+                        </div>
+                        <div class="overlay-pers"></div>
+                        
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="card-pers">
+                        <h5 class="text-center">FOOD</h5>
+                        <img src="../../public/healthy-foods.webp" class="img-card-pers" alt="">
+                        <div class="white-square">
+                            <h5 class="text-center">3 POSTS</h5>
+                        </div>
+                        <div class="overlay-pers"></div>
+                        
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="card-pers">
+                        <h5 class="text-center">LIFESTYLE</h5>
+                        <img src="../../public/visit-france.webp" class="img-card-pers" alt="">
+                        <div class="white-square">
+                            <h5 class="text-center">3 POSTS</h5>
+                        </div>
+                        <div class="overlay-pers"></div>
+                        
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="card-pers">
+                        <h5 class="text-center">STORIES</h5>
+                        <img src="../../public/travel-alone.webp" class="img-card-pers" alt="">
+                        <div class="white-square">
+                            <h5 class="text-center">3 POSTS</h5>
+                        </div>
+                        <div class="overlay-pers"></div>
+                        
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-pers">
+                        <h5 class="text-center">TRAVEL</h5>
+                        <img src="../../public/best-places.webp" class="img-card-pers" alt="">
+                        <div class="white-square">
+                            <h5 class="text-center">3 POSTS</h5>
+                        </div>
+                        <div class="overlay-pers"></div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </section>                              <!-- FINE SEZIONE 7 COMPLETA -->
+
+        
+
     </main>
+
 </template>
 
 <style lang="scss" scoped>
-
-
-.card-positive{
-    position: relative;
-}
-
-.text-overlay{
-    position: absolute;
-    top: 140px;
-    left: 30px;
-}
-
-.text-overlay-center{
-    position: absolute;
-    top: 360px;
-    left: 200px;
-}
-
-.card img{
-    filter: brightness(0.7);
-}
-
-.card:hover{
-    cursor: pointer;
-    filter: brightness(1.1);
-}
-
-/* FINE CSS SEZIONE 2 / */
-
-.flex-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h4{
-        font-weight: bold;
+    
+    .container{
+        max-width: 1200px;
     }
-}
+    
+    .card-positive{
+        position: relative;
+    }
 
-.badge-pers{
-    background:#555454;
-    padding: 8px 16px;
-    margin-right: 15px;
-    font-weight: 500;
-}
+    .text-overlay{
+        position: absolute;
+        top: 140px;
+        left: 30px;
+    }
 
-.card-lifestyle-text{
-    position: absolute;
-    top: 400px;
-}
+    .text-overlay-center{
+        position: absolute;
+        top: 360px;
+        left: 188px;
+    }
 
-.flex-lifestyle{
-    display: flex;
-    align-items: center;
-}
+    .card-section-main img{
+        filter: brightness(0.5);
+    }
 
-.card-lifestyle{
-    width: 35%;
-}
+    .card-section-main{
+        cursor: pointer;
+        transition: 0.5s;
+        filter: contrast();
+    }
+    .card-section-main:hover{
+        cursor: pointer;
+        filter: contrast(0.6);
+        transition: 0.5s;
+        }
 
-hr{
-    color: black;
-}
+    /* FINE CSS SEZIONE 2 */
 
-.flex-lifestyle .card-img-overlay{
-    padding: 2px 10px;
-}
+    .flex-section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-/* / FINE CSS SEZIONE 3 / */
+        h4{
+            font-weight: bold;
+        }
+    }
 
-.bg-section{
-    background-color:#F3F3F3;
-}
+    .badge-pers{
+        background:#555454;
+        padding: 8px 16px;
+        margin-right: 15px;
+        font-weight: 500;
+    }
 
-/* / FINE CSS SEZIONE 4 */
+    .card-lifestyle-text{
+        position: absolute;
+        top: 400px;
+    }
+
+    .flex-lifestyle{
+        display: flex;
+        align-items: center;
+    }
+
+    .card-lifestyle{
+        width: 35%;
+    }
+
+    hr{
+        color: black;
+    }
+
+    .flex-lifestyle .card-img-overlay{
+        padding: 2px 10px;
+    }
+
+    /* FINE CSS SEZIONE 3 */
+
+    .bg-section{
+        background-color:#F3F3F3;
+    }
+
+    /* FINE CSS SEZIONE 4 */
+
+
+    
+
+    /* fine sezione 5 */
+    
+    .card-carousel-width{
+        width: 200px;
+    }
+    
+
+    /* fine sezione 6 */
+    .flex-footer-top{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; 
+        
+        > *{
+            width: calc(100% / 6);
+        }
+    }
+    
+    
+    .card-pers{
+        width: 100%px;
+        height: 200px;
+        margin:0 5px;
+        overflow: hidden;
+        border-radius: 5px;
+        position: relative;
+
+        h5{
+            position: absolute;
+            z-index: 1;
+            left: 92px;
+            top: 65px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+
+        }
+
+            .img-card-pers{
+            width:100%;
+            height: 100%;
+            transform: scale(1.4) translateX(-20px);
+            transition: transform 0.3s ease;
+            filter: contrast(0.5) brightness(0.9);      
+        }
+
+        
+    }
+
+    .overlay-pers{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:rgba(255, 0, 0, 0.3);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .white-square{
+        width: 80%;
+        height: 70%;
+        border: 1px solid white;
+        top: 30px;
+        left: 33px;
+        position: absolute;
+        transform:translateX(-40px);
+        opacity: 0;
+        z-index: 1;
+        transition: 0.3s;
+        
+
+        h5{
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            top: 90px;
+            left: 90px;
+            font-size: 16px;
+        }
+    }
+    .card-pers:hover .img-card-pers,
+    .card-pers:hover .overlay-pers{
+        transform: scale(1.4) translateX(20px);
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .card-pers:hover .white-square{
+        transform: translateX(48px);
+        transition: transform 0.3s ease;
+        opacity: 2;
+        left: -18px;
+    }
+    
+    .flex-footer-top div:nth-child(1) .card-pers > h5,
+    .flex-footer-top div:nth-child(2) .card-pers > h5,
+    .flex-footer-top div:nth-child(3) .card-pers .white-square  h5,
+    .flex-footer-top div:nth-child(5) .card-pers > h5{
+        left: 100px;
+    }
+
+    .flex-footer-top div:nth-child(3) .card-pers > h5{
+        left: 124px;
+    }
+
+    .flex-footer-top div:nth-child(6) .card-pers > h5{
+        left: 106px;
+    }
+    
 
 </style>
