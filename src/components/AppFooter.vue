@@ -57,59 +57,112 @@ export default {
                 {
                     title:'Brand Assets'
                 },
-            ]
+            ],
+            userEmail: '',
+            isModalOpen: false,
+            isSubscribed: true,
         };
     },
     methods: {
+        submitForm() {
+        // Aggiungo le informazioni inserite dall'utente in una 
+        this.userEmail =  this.email;
 
+        console.log(this.userEmail);
+
+        // Nascondo il modulo di iscrizione alla newsletter
+        this.isSubscribed = false;
+
+        // Mostro il modale
+        this.isModalOpen = true;
+        },
+        // Chiudo il modale
+        closeModal() {
+            this.isModalOpen = false;
+        }
     }
 }
 </script>
 
 <template>
     <footer>
+
+        <!-- bordo superiore del footer con icona nel mezzo -->
         <div id="footer-arrow" class="d-flex justify-content-center py-0 my-0">
             <i class="fa-solid fa-caret-down fa-2xl"></i>
         </div>
-        <section id="footer-top">
 
+        <!-- TOP SECTION DEL FOOTER COMPLETA -->
+        <section id="footer-top">
             <div class="my-container">
                 <div class="row d-flex">
-                    <div class="footer-list col-2 text-white">
+
+                    <!-- importo le liste relative ai menu del footer con la direttiva v-for -->
+                    <div class="footer-list col text-white">
                         <h4>GET STARTED</h4>
                         <ul>
-                            <li v-for="(singleElem, i) in getStarted"> {{ singleElem.title }}</li>
+                            <li v-for="(singleElem, i) in getStarted">
+                                <a href="#nogo">{{ singleElem.title }}</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="footer-list col-2">
+                    <div class="footer-list col">
                         <h4>ABOUT</h4>
                         <ul>
                             <li v-for="(singleElem, j) in about"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
-                    <div class="footer-list col-2">
+                    <div class="footer-list col">
                         <h4>FEATURES</h4>
                         <ul>
                             <li v-for="(singleElem, x) in features"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
-                    <div class="footer-list col-2">
+                    <div class="footer-list col">
                         <h4>QUICK LINKS</h4>
                         <ul>
                             <li v-for="(singleElem, y) in quickLinks"> {{ singleElem.title }}</li>
                         </ul>
                     </div>
-                    <div class="nl-subscribe col-4">
-                        <form>
+
+                    <!-- utilizzo la direttiva v-if associata alla variabile isSubscribed per nascondere la sezione newsletter on submit del form -->
+                    <div v-if="isSubscribed" class="nl-subscribe col-4">
+
+                        <form @submit.prevent="submitForm">
                             <h4>SUBSCRIBE TO NEWSLETTER</h4>
-                            <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+                            <input type="email" class="form-control" id="InputEmail" v-model="email" placeholder="Email">
                             <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
                         </form>
+                        
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- MODALE MOSTRATO ON SUBMIT DEL FORM NEWSLETTER -->
+        <section id="contact-form-modal">
+            <div v-if="isModalOpen" class="my-modal">
+                <div class="my-modal-content">
+                    
+                    <!-- Icona che ci permette di chiudere il modale attraverso la funzione closeModal -->
+                    <span class="close" @click="closeModal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+
+                    <h4 >
+                        Ti sei iscritto con successo alla <br>nostra Newsletter con la seguente Email:
+                    </h4>
+                    <h3>
+                        {{ this.userEmail }}
+                    </h3>
+                    <p>
+                        Ti invieremo presto aggiornamenti sui nostri servizi
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTTOM SECTION DEL FOOTER COMPLETA -->
         <section id="footer-bottom">
             <div class="my-container">
                 <div class="d-flex justify-content-between align-items-center">
@@ -135,6 +188,52 @@ footer {
 
     background-color: $my-main-color;
 
+    /* Inizio stile per il modale */
+    .my-modal { 
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .my-modal-content {
+        background-color: $my-main-color;
+        margin: 15% auto; 
+        padding: 20px 30px;
+        border: 2px solid #333333;
+        border-radius: 12px;
+        width: 50%;
+        color: white;
+        text-align: center;
+
+        > * {
+            padding-bottom: 10px;
+        }
+        i {
+            color: #333333;
+        }
+        i:hover {
+            color: white;
+        }
+        #user-data {
+            text-align: start;
+        }
+    }
+
+    .close {
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    /* Fine stile per il modale */
+
+    
+    /* CSS FOOTER ARROW COMPLETO */
     #footer-arrow {
         border-top: 5px solid #333333;
 
@@ -143,6 +242,7 @@ footer {
         }
     }
 
+    /* CSS FOOTER TOP COMPLETO */
     #footer-top {
 
         .my-container {
@@ -164,7 +264,7 @@ footer {
 
                 li:hover {
                     color: #333333;
-                    transition: 0.3s;
+                    transition: ease-in-out 0.3s;
                 }
             }
 
@@ -197,12 +297,13 @@ footer {
                 button:hover {
                     background-color: white;
                     color: $my-main-color;
-                    transition: 0.3s;
+                    transition: ease-in-out 0.3s;
                 }
             }
         }
     }
 
+    /* CSS FOOTER ARROW COMPLETO */
     #footer-bottom {
 
         .my-container {

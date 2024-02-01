@@ -1,20 +1,93 @@
 <script>
+import {store} from '../store.js'
+
 export default {
     data() {
         return {
-
+            activeImg : 0,
+            autoplay : null,
+            store,
+            lifeStyle: [
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/visit-france.webp',
+                    title: 'Reasons To Visit France'
+                },
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/best-places.webp',
+                    title: 'Places For A Road Trip'
+                },
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/music-love.webp',
+                    title: 'Music The Love Of My Life'
+                },
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/anime-fashion.webp',
+                    title: 'Fashion Trend Now A Days'
+                },
+            ],
+            stories: [
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/ideas-anime.webp',
+                    title: 'Live Ideas You Might Be Anime'
+                },
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/travel-alone.webp',
+                    title: 'Traveling Alone Is Awesome'
+                },
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/success-story.webp',
+                    title: 'The Best Success Stories'
+                },
+                {
+                    imgUrl: 'https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/best-places.webp',
+                    title: 'Places For A Road Trip'
+                },
+            ],
         };
     },
     methods: {
+        print () {
+            console.log(this.store.items[0].imgUrl)
+        },
 
-    }
+        nextSlide() {
+            if(this.activeImg < this.store.items.length - 1){
+                this.activeImg++;
+            }
+            else{
+                this.activeImg = 0;
+            }
+        },
+
+        prevSlide() {
+            if(this.activeImg > 0){
+                this.activeImg--;
+            }
+            else{
+                this.activeImg = this.store.items.length - 1;
+            }
+        },
+
+        startAutoplay() {
+            this.autoplay = setInterval(this.nextSlide, 3000);
+        },
+
+        handleEnterOnSlider() {
+            clearInterval(this.autoplay);
+            this.autoplay = null;
+        },
+
+        handleLeaveSlider() {
+            this.startAutoplay();
+        },
+    },
 }
 </script>
 
 <template>
     <header>
         <!-- HEADER TOP -->
-            <section class="header-top">
+            <section class="header-top" @mouseenter="handleEnterOnSlider()" @mouseleave="handleLeaveSlider()">
                 <div class="container h-100">
                     <div class="row h-100 text-center text-light">
                         <div class="col-auto updates fw-bold fs-6 d-flex align-items-center">
@@ -22,22 +95,22 @@ export default {
                         </div>
 
                         <!-- CAROSELLO IMG/ORA/TITOLO -->
-                        <div class="col-auto d-flex align-items-center p-0">
+                        <div class="col-auto p-0">
                             <div class="img-box">
                                 <div class="triangle-right"></div>
-                                <img src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/healthy-foods-150x150.webp" alt="">
+                                <img class="smooth-transition" :src="this.store.items[activeImg].imgUrl" :alt="this.store.items[activeImg].imgUrl">
                             </div>
                         </div>
-                        <div class="col-auto d-flex align-items-center ">
-                            <span class="fw-medium"> 5:30 </span>
+                        <div class="col-auto d-flex align-items-center">
+                            <span class="fw-medium smooth-transition"> {{this.store.items[activeImg].hour}}</span>
                         </div>
                         <div class="col d-flex align-items-center">
-                            <a class="fs-5 fw-medium current-title">"The Best Winter Outfits"</a>
+                            <a class="fs-5 fw-medium current-title m-0 typewriter" >{{this.store.items[activeImg].title}}</a> 
                         </div>
                         <!-- FRECCIE SCORRIMENTO CAROSELLO -->
                         <div class="col-auto d-flex align-items-center">
-                            <i class="fa-solid fa-angle-left angle"></i>
-                            <i class="fa-solid fa-angle-right angle"></i>
+                            <i class="fa-solid fa-angle-left angle" @click="prevSlide()"></i>
+                            <i class="fa-solid fa-angle-right angle" @click="nextSlide()"></i>
                         </div>
                         <!-- BRANDS -->
                         <div class="col-auto d-flex align-items-center p-0">
@@ -96,13 +169,13 @@ export default {
                                 <div class="mb-4">
                                     <div class="row row-cols-3 mb-3 ">
                                         <div class="col">
-                                            <img class="rounded-2" src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/music-love.webp" alt="">
+                                            <img class="rounded-2" :src="this.lifeStyle[2].imgUrl" :alt="this.lifeStyle[2].title">
                                         </div>
                                         <div class="col">
-                                            <img class="rounded-2" src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/best-places.webp" alt="">
+                                            <img class="rounded-2" :src="this.lifeStyle[1].imgUrl" :alt="this.lifeStyle[1].title">
                                         </div>
                                         <div class="col">
-                                            <img class="rounded-2" src="https://demo.hasnaindev.com/animetech/wp-content/uploads/2022/12/anime-fashion.webp" alt="">
+                                            <img class="rounded-2" :src="this.lifeStyle[3].imgUrl" :alt="this.lifeStyle[3].title">
                                         </div>
                                     </div>
 
@@ -146,30 +219,66 @@ export default {
                     <!-- LINK HEADER BOTTOM -->
                     
                     <ul class="col m-0 d-flex align-items-center justify-content-center">
+
+                        <!-- HOME -->
                         <li class="active-link">
                             <i class="fa-solid fa-house-chimney"></i>
                             <a href="/">HOME</a>
                         </li>
+                        <!-- ABOUT US -->
                         <li>
                             <i class="fa-solid fa-user"></i>
                             <a href="/aboutus">ABOUT US</a>
                         </li>
-                        <li>
+                        <!-- LIFE STYLE -->
+                        <li id="life-style">
                             <i class="fa-solid fa-suitcase"></i>
-                            <a href="/">LIFESTYLE</a>
+                            <div class="dropdown">
+                                <a>LIFESTYLES
+                                    <div class="dropdown-content smooth-transition">
+                                        <div class="container">
+                                            <div class="row row-cols-4 p-3">
+                                                <div class="col text-center" v-for="(elem, i) in lifeStyle">
+                                                    <div class="bg-light rounded-3">
+                                                        <img class="rounded-3" :src="elem.imgUrl" :alt="elem.title">
+                                                        <a class="bg-light p-2 m-0 rounded-3">{{ elem.title }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                             <i class="fa-solid fa-angle-down"></i>
                         </li>
-                        <li class="">
+                        <!-- STORIES -->
+                        <li id="stories">
                             <i class="fa-solid fa-book-open-reader"></i>
-                            <a href="/">STORIES</a>
+                            <div class="dropdown">
+                                <a>STORIES
+                                    <div class="dropdown-content smooth-transition">
+                                        <div class="container">
+                                            <div class="row row-cols-4 p-3">
+                                                <div class="col text-center" v-for="(elem, i) in stories">
+                                                    <div class="bg-light rounded-3">
+                                                        <img class="rounded-3" :src="elem.imgUrl" :alt="elem.title">
+                                                        <a class="bg-light p-2 m-0 rounded-3">{{ elem.title }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                             <i class="fa-solid fa-angle-down"></i>
                         </li>
-                        <li class="">
+                        <!-- PAGES -->
+                        <li id="pages">
                             <i class="fa-solid fa-book"></i>
                             
                             <div class="dropdown">
-                                <a class="pages-btn">PAGES
-                                    <div class="dropdown-content">
+                                <a>PAGES
+                                    <div class="dropdown-content smooth-transition bg-light ">
                                         <a href="#">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             <span>SEARCH RESULT</span>
@@ -186,7 +295,7 @@ export default {
                                             <i class="fa-solid fa-calendar-days"></i>
                                             <span>DATE ARCHIVE</span>
                                         </a>
-                                        <a href="#">
+                                        <a href="/error404">
                                             <i class="fa-solid fa-bug"></i>
                                             <span>ERROR 404</span>
                                         </a>
@@ -195,6 +304,7 @@ export default {
                             </div>
                         
                         </li>
+                        <!-- CONTACT US -->
                         <li>
                             <i class="fa-solid fa-envelope"></i>
                             <a href="/contactus">CONTACT US</a>
@@ -206,7 +316,7 @@ export default {
                         <button class="btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
+                        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasSearch" aria-labelledby="offcanvasSearchLabel">
         
                             <!-- OFFCANVAS BODY -->
                             <div class="offcanvas-body" >
@@ -215,7 +325,11 @@ export default {
                                         <input type="text" class="css-input" placeholder="Search..."/>
                                     </div>
                                 </div>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                <div class="btn-box">
+                                    <button type="button" class="button-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                                        <i class="fa-solid fa-x"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,6 +339,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+/*   GENERAL */
 .container {
     width: 1200px;
 }
@@ -251,6 +367,15 @@ ul {
     }
 }
 
+.smooth-transition {
+    animation: mytransition 0.5s ; 
+}
+
+@keyframes mytransition {
+    0%   { opacity: 0.1; }
+  100% { opacity: 1; }
+}
+
 .fa-brands {
         width: 30px;
         height: 30px;
@@ -272,12 +397,38 @@ ul {
         }
     }
 
-    
+
+/*           HEADER TOP          */
 .header-top {
 height: 40px;
 background-color:#BF1C2D;
 
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap; 
+  margin: 0 auto;
+  
+  animation: 
+    typing 1s steps(80, end),
+    blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 40% }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
     .img-box {
+        height: 100%;
         width: 40px;
         position: relative;
         
@@ -288,6 +439,11 @@ background-color:#BF1C2D;
             border-top: 20px solid transparent;
             border-left: 8px solid #BC1C2F;
             border-bottom: 20px solid transparent;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
         }
     }
     .row {
@@ -307,6 +463,7 @@ background-color:#BF1C2D;
     }
 }
 
+/*           HEADER MIDDLE          */
 .header-middle {
     padding: 20px 0;
     justify-content: space-between;
@@ -316,6 +473,8 @@ background-color:#BF1C2D;
     }
 }
 
+
+/*           HEADER BOTTOM          */
 .header-bottom {
     color: rgb(35, 35, 35);
     display: flex;
@@ -431,8 +590,8 @@ background-color:#BF1C2D;
 
     }
 
-    #glass .offcanvas-start {
-        transition: 1.5s;
+    #glass .offcanvas-end {
+        transition: 1s;
     }
 
     #glass .offcanvas {
@@ -446,22 +605,31 @@ background-color:#BF1C2D;
             display: flex;
             justify-content: center;
             align-items: center;
-            .row {
-                width: 50%;
-                height: 60px;
+            
+            .btn-box {
+                width: 30px;
+            }
 
+            .button-close {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0);
+            }                
+                i {
+                    color: white;
+                }
+
+            .row {
+                width: 70%;
+                height: 60px;
                 .css-input {
                     text-align: center;
-                    width: 80%;
-                    padding: 20px 15px;
-                    font-size: 25px;
-                    border-width: 0px;
+                    width: 100%;
+                    padding: 5px 15px;
+                    font-size: 30px;
+                    border: none;
+                    border-bottom: 1px solid white;
                     background-color: rgba(0, 0, 0, 0);
-                    color: #000000;
-                    border-style: solid;
-                    border-radius: 0px;
-                    box-shadow: 0px 0px 16px rgba(203,203,203,.75);
-                    text-shadow: -50px 0px 0px rgba(66,66,66,.0);
+                    color: white;
                 }
                 .css-input:focus {
                     outline:none;
@@ -472,10 +640,10 @@ background-color:#BF1C2D;
     }
 
     ul {
-
+            height: 50px;
         li {
             margin: 0 10px;
-            height: 20px;
+            height: 90%;
             display: flex;
             align-items: center;
             padding: 0 10px;
@@ -494,26 +662,25 @@ background-color:#BF1C2D;
 
                     a {
                         color: #BF1D2E;
+                        
                     }
+
                 }
 
             a {
-                padding: 0 10px;
-            }
-
-            .pages-btn {
-                border: none;
-                background-color: none;
+                padding: 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
             }
             .dropdown-content {
                 display: none;
-                position: absolute; top: 36px;
+                position: absolute; top: 43px; left: 0;
                 background-color: #f1f1f1;
                 min-width: 200px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
             }
-
             .dropdown-content a {
                 display: flex;
                 color: black;
@@ -534,13 +701,77 @@ background-color:#BF1C2D;
             .dropdown:hover .dropdown-content {
                 display: block;
             }
-
-            .dropdown:hover .dropbtn {
-                background-color: #3e8e41;
-            }
         }
     }
 }
+
+#life-style {
+    
+    .dropdown-content {
+                display: none;
+                background-color: #f1f1f1;
+                width: 100vw;
+                min-height: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                position: absolute; left: -626px;
+            }
+
+            .dropdown-content a {
+                display: flex;
+                color: black;
+                text-decoration: none;
+                display: block;
+                i {
+                    width: 15%;
+                }
+            }
+
+            .dropdown-content a:hover {
+                color: #BC1C2F;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+}
+
+#stories {
+    .dropdown-content {
+                display: none;
+                background-color: #f1f1f1;
+                width: 100vw;
+                min-height: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                position: absolute; left: -800px;
+                
+                &:hover {
+                    transition: 3s;
+                }
+            }
+
+            .dropdown-content a {
+                display: flex;
+                color: black;
+                text-decoration: none;
+                display: block;
+
+                i {
+                    width: 15%;
+                }
+            }
+
+            .dropdown-content a:hover {
+                color: #BC1C2F;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+}
+
+
 
 
 </style>

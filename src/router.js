@@ -5,6 +5,7 @@ import { createRouter , createWebHistory } from "vue-router";
 import Home from './pages/Home.vue';
 import AboutUs from './pages/AboutUs.vue';
 import ContactUs from './pages/ContactUs.vue';
+import Error404 from './pages/Error404.vue';
 
 const router = createRouter ({
     history: createWebHistory(),
@@ -23,6 +24,11 @@ const router = createRouter ({
                 path: '/contactus',
                 name: 'contactus',
                 component: ContactUs
+            },
+            {
+                path: '/error404',
+                name: 'error404',
+                component: Error404
             },
         ]
 });

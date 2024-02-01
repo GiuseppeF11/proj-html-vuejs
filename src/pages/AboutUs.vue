@@ -1,22 +1,119 @@
 <script>
+import {store} from '../store.js'
+import AppHeader from '../components/AppHeader.vue';
+import AppFooter from '../components/AppFooter.vue';
+
 export default {
     data() {
         return {
-            activeAccordion: 0,
-            accordions: []
+            store,
+            activeAccordion1: null,
+            activeAccordion2: null, 
+            team: [
+                {
+                    author: 'DAVID ANDERSON',
+                    role: 'Founder & CEO',
+                }
+            ],
+            accordions1: [
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 1
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 2
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 3
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 4
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 5
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 6
+                },
+                
+            ],
+            accordions2: [
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 1
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 2
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 3
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 4
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 5
+                },
+                {
+                    title: 'A Frequently Asked Question Surrounding Your Service',
+                    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+                    id: 6
+                },
+                
+            ],
         };
     },
-
+    components: {
+        AppHeader,
+        AppFooter
+    },
     methods: {
-        dynamicAcc () {
-            
+    toggleAccordion(list, index) {
+      if (list === 1) {
+        if (this.activeAccordion1 === index) {
+          this.activeAccordion1 = null;
+        } else {
+          this.activeAccordion1 = index;
         }
+      } else if (list === 2) {
+        if (this.activeAccordion2 === index) {
+          this.activeAccordion2 = null;
+        } else {
+          this.activeAccordion2 = index;
+        }
+      }
     }
+  }
 }
 </script>
 
 <template>
+    <AppHeader />
+
     <main>
+
+        <!-- Jumbotron -->
+
         <section class="jumbotron">
             <div id="jumbo-overlay">
                 <div class="d-flex justify-content-center align-items-center">
@@ -26,6 +123,9 @@ export default {
                 </div>
             </div>
         </section>
+
+        <!-- First-Section (Start Improving) -->
+
         <section class="first-section">
             <div class="container">
                 <div class="row">
@@ -49,6 +149,9 @@ export default {
                 </div>
             </div>
         </section>
+
+        <!-- Second-Section (Our Mission Vision) -->
+
         <section class="second-section">
             <div class="container">
                 <div class="row">
@@ -69,6 +172,9 @@ export default {
                 </div>
             </div>
         </section>
+
+        <!-- Third-Section (Our Team) -->
+
         <section class="third-section">
             <div class="container">
                 <div class="text-center mb-4">
@@ -89,14 +195,17 @@ export default {
                             </div>
                         </div>
                         <div class="text-center">
-                            <div class="author text-grey">DAVID ANDERSON</div>
-                            <div class="role text-red">Founder & CEO</div>
+                            <div class="author text-grey">{{this.team[0].author}}</div>
+                            <div class="role text-red">{{this.team[0].role}}</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="fourth-section p-4">
+
+        <!-- Fourth-Section (FAQ)  -->
+
+        <section class="fourth-section p-4">
             <div class="container">
                 <div class="text-center mb-4">
                     <h1 class="text-grey mb-3 ">
@@ -104,58 +213,54 @@ export default {
                     </h1>
                 </div> 
                 <div class="row">
-                    <div class="col">
+
+                    <!--  Accordion 1 -->
+                    <div class="col m-1">
                         <div class="card-body">
-                            <div class="accordion" id="accordionPanelsStayOpenExample">
-                                <div v-for="(accordion, i) in 6">
-                                    <div class="accordion-item" @click="activeAccordion = i">
-                                        <h2 class="accordion-header">
-                                                <button class="accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne" >
-                                                    <span>
-                                                        A Frequently Asked Question Surrounding Your Service
-                                                    </span>
-                                                    <span>
-                                                        <i class="fa-solid" :class="activeAccordion == i ?  'fa-minus' : 'fa-plus' "></i>
-                                                    </span>
-                                                </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                                </div>
+                            <div class="accordion" id="accordionExample1">
+                                <div v-for="(item, index) in accordions1" :key="index" class="accordion-item">  <!-- Ciclo per la lunghezza del primo array -->
+                                    <p class="accordion-header" :id="'heading1-' + index">
+                                    <button class="accordion-elem" :class="{ 'text-red': activeAccordion1 === index }" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse1-' + index" aria-expanded="false" :aria-controls="'collapse1-' + index" @click="toggleAccordion(1, index)">
+                                        {{ item.title }}
+                                        <i class="fa-solid" :class=" activeAccordion1 === index ? 'fa-minus' : 'fa-plus'"></i>
+                                    </button>
+                                    </p>
+                                    <div :id="'collapse1-' + index" class="accordion-collapse collapse" :class="{ 'show': activeAccordion1 === index }" :aria-labelledby="'heading1-' + index">
+                                        <div class="accordion-body">
+                                            {{ item.text }}
                                         </div>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+
+                    <!-- Accordion 2 -->
+                    <div class="col accordion m-1">
                         <div class="card-body">
-                            <div class="accordion" id="accordionPanelsStayOpenExample">
-                                <div class="accordion-item" v-for="(accordion, i) in 6" @click="activeAccordion = i" >
-                                        <h2 class="accordion-header">
-                                                <button class="accordion collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne" >
-                                                    <span>
-                                                        A Frequently Asked Question Surrounding Your Service
-                                                    </span>
-                                                    <span>
-                                                        <i class="fa-solid" :class="activeAccordion == i ?  'fa-minus' : 'fa-plus' "></i>
-                                                    </span>
-                                                </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                                </div>
+                            <div class="accordion" id="accordionExample2">
+                                <div v-for="(item, index) in accordions2" :key="index" class="accordion-item">
+                                    <p class="accordion-header" :id="'heading2-' + index">
+                                    <button class="accordion-elem" :class="{ 'text-red': activeAccordion2 === index }" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse2-' + index" aria-expanded="false" :aria-controls="'collapse2-' + index" @click="toggleAccordion(2, index)">
+                                        {{ item.title }}
+                                        <i class="fa-solid" :class=" activeAccordion2 === index ? 'fa-minus' : 'fa-plus'"></i>
+                                    </button>
+                                    </p>
+                                    <div :id="'collapse2-' + index" class="accordion-collapse collapse" :class="{ 'show': activeAccordion2 === index }" :aria-labelledby="'heading2-' + index">
+                                        <div class="accordion-body">
+                                            {{ item.text }}
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
+
+    <AppFooter />
 </template>
 
 <style lang="scss" scoped>
@@ -174,6 +279,8 @@ h1 , h4 {
 .container {
     width: 1200px;
 }
+
+/*     Jumbotron    */
 .jumbotron {
         background-image: url('/public/page-head-banner.webp');
         background-position: center;
@@ -193,17 +300,20 @@ h1 , h4 {
         }
 }
 
+/*     First-Section (Start Improving)   */
 .first-section {
     min-height: 380px;
     padding: 30px 0;
 }
 
+/*     Second-Section (Our Mission Vision)   */
 .second-section {
     min-height: 300px;
     padding: 30px 0;
     background-color: #F3F3F3;
 }
 
+/*     Third-Section (Our Team)   */
 .third-section {
     min-height: 400px;
     padding: 30px 0;
@@ -272,33 +382,35 @@ h1 , h4 {
 
 }
 
+/*     Fourth-Section (FAQ)   */
 .fourth-section {
-    margin: 30px;
+    margin: 10px;
+    min-height: 80vh;
+     
     .accordion {
-        
-        .accordion-item {
-            border-radius: 0;
 
-            .accordion {
-                border: none;
-                background-color: white;
-                font-size: 16px;
-                display: flex;
-                justify-content: space-between;
-                padding: 10px 18px;
+        button {
+
                 width: 100%;
+                border: none;
                 font-weight: 700;
-                
-                &:focus {
-                    box-shadow: none;
-                    color: red;
-                }
-
-                i {
-                    font-size: 18px;
-                }
+                font-size: 17px;
+                padding: 13px 15px;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
+        .accordion-item {
+            border-radius: 0; 
+            padding: 0; 
         }
-    }
+
+        .accordion-collapse {
+            border-top: 1px solid rgb(209, 209, 209);
+            transition: 0.5s;
+        
+        }
+    }    
 }
 </style>
