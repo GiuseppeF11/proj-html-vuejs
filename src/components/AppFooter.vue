@@ -86,7 +86,6 @@ export default {
 
 <template>
     <footer>
-        <!-- bella ragazzi come va -->
         <!-- bordo superiore del footer con icona nel mezzo -->
         <div id="footer-arrow" class="d-flex justify-content-center py-0 my-0">
             <i class="fa-solid fa-caret-down fa-2xl"></i>
@@ -109,19 +108,25 @@ export default {
                     <div class="footer-list col">
                         <h4>ABOUT</h4>
                         <ul>
-                            <li v-for="(singleElem, j) in about"> {{ singleElem.title }}</li>
+                            <li v-for="(singleElem, j) in about">
+                                <a href="#nogo">{{ singleElem.title }}</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-list col">
                         <h4>FEATURES</h4>
                         <ul>
-                            <li v-for="(singleElem, x) in features"> {{ singleElem.title }}</li>
+                            <li v-for="(singleElem, x) in features">
+                                <a href="#nogo">{{ singleElem.title }}</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-list col">
                         <h4>QUICK LINKS</h4>
                         <ul>
-                            <li v-for="(singleElem, y) in quickLinks"> {{ singleElem.title }}</li>
+                            <li v-for="(singleElem, y) in quickLinks">
+                                <a href="#nogo">{{ singleElem.title }}</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -259,12 +264,17 @@ footer {
 
                 li {
                     margin-bottom: 10px;
-                    color: white;
                 }
 
-                li:hover {
-                    color: #333333;
+                li > a {
+                    text-decoration: none;
+                    color: white;
                     transition: ease-in-out 0.3s;
+                }
+
+                li >a:hover {
+                    color: #333333;
+                    
                 }
             }
 
@@ -292,12 +302,13 @@ footer {
                     padding-bottom: 0.8rem;
                     background-color: #545454;
                     color: white;
+                    transition: ease-in-out 0.3s;
                 }
 
                 button:hover {
                     background-color: white;
                     color: $my-main-color;
-                    transition: ease-in-out 0.3s;
+                    
                 }
             }
         }

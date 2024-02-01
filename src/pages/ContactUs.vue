@@ -325,7 +325,7 @@ main {
                 #floatingTextarea {
                     padding: 16px 12px;
                     &::placeholder {
-                        color: #333333;
+                        color: #595C5F;
                     }
                 }
                 .my-button {
@@ -334,12 +334,11 @@ main {
                     padding: 8px 40px;
                     border: 1px solid transparent;
                     border-radius: 24px;
-                    
+                    transition: ease-in-out 0.3s;
                 }
 
                 .my-button:hover {
                     background-color: #333333;
-                    transition: ease-in-out 0.3s;
                 }
             }
             
