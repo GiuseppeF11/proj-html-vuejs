@@ -246,7 +246,7 @@ export default {
     <AppHeader />
 
     <main>
-        <section class="bg-section">
+        <section class="bg-section mb-4">
             <div class="slider" @mouseover="handleMouseOver" @mouseleave="handleMouseLeave">
                 <div class="card" style="width: 18rem;" v-for="(slide,i) in slideUno">
                     <img :src="slide.image" class="card-img-top" alt="...">
@@ -599,10 +599,10 @@ export default {
 
 <style lang="scss" scoped>
 .bg-section{
-            background-color:#F3F3F3;
-            padding: 30px;
-            position: relative;
-        }
+    background-color:#F3F3F3;
+    padding: 30px;
+    position: relative;
+}
         
 .slider{
     display: flex;
@@ -654,7 +654,7 @@ export default {
 .my-badge-pers1{
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 25%;
     margin:10px;
     padding: 5px 15px;
     margin-left: 30px;
@@ -663,7 +663,7 @@ export default {
 .my-badge-pers2{
     position: absolute;
     top: 0;
-    left: 40%;
+    left: 50%;
     margin-top: 10px;
     padding: 5px 10px;
     margin-right: 70px;
@@ -679,14 +679,14 @@ export default {
 
 .text-overlay{
     position: absolute;
-    top: 140px;
-    left: 30px;
+    top: 120px;
+    left: 12px;
 }
 
 .text-overlay-center{
     position: absolute;
-    top: 360px;
-    left: 188px;
+    top: 320px;
+    left: 170px;
 }
 
 .card-section-main img{
@@ -702,8 +702,11 @@ export default {
     cursor: pointer;
     filter: contrast(0.6);
     transition: 0.5s;
-    }
+}
 
+.text-center span{
+    margin-top: 10px;
+}
 /* FINE CSS SEZIONE 2 */
 
 .flex-section{
@@ -716,6 +719,11 @@ export default {
     }
 }
 
+.card-img-overlay span{
+    margin-top: 10px;
+}
+
+
 .badge-pers{
     background:#555454;
     padding: 8px 16px;
@@ -723,9 +731,14 @@ export default {
     font-weight: 500;
 }
 
+.badge-pers:hover{
+    background-color: #bf1d2e;
+    cursor: pointer;
+}
+
 .card-lifestyle-text{
     position: absolute;
-    top: 400px;
+    top: 370px;
 }
 
 .flex-lifestyle{
