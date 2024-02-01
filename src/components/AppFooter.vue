@@ -86,7 +86,7 @@ export default {
 
 <template>
     <footer>
-
+        <!-- bella ragazzi come va -->
         <!-- bordo superiore del footer con icona nel mezzo -->
         <div id="footer-arrow" class="d-flex justify-content-center py-0 my-0">
             <i class="fa-solid fa-caret-down fa-2xl"></i>
