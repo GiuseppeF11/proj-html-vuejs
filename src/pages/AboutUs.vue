@@ -88,14 +88,14 @@ export default {
         AppFooter
     },
     methods: {
-    toggleAccordion(list, index) {
-      if (list === 1) {
-        if (this.activeAccordion1 === index) {
-          this.activeAccordion1 = null;
-        } else {
-          this.activeAccordion1 = index;
+    toggleAccordion(list, index) {          //Diamo come argomenti la lista in cui ciclare ed il rispettivo indice
+      if (list === 1) {                                                 //Per la lista 1 (accordions1)
+        if (this.activeAccordion1 === index) {                          //Se l'accordion attivo è uguale all'indice
+          this.activeAccordion1 = null;                                 //Chiudilo
+        } else {    
+          this.activeAccordion1 = index;                                //Altrimenti attivalo
         }
-      } else if (list === 2) {
+      } else if (list === 2) {                                          //Per la lista 2 (accordions2)
         if (this.activeAccordion2 === index) {
           this.activeAccordion2 = null;
         } else {
@@ -218,9 +218,9 @@ export default {
                     <div class="col m-1">
                         <div class="card-body">
                             <div class="accordion" id="accordionExample1">
-                                <div v-for="(item, index) in accordions1" :key="index" class="accordion-item">  <!-- Ciclo per la lunghezza del primo array -->
-                                    <p class="accordion-header" :id="'heading1-' + index">
-                                    <button class="accordion-elem" :class="{ 'text-red': activeAccordion1 === index }" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse1-' + index" aria-expanded="false" :aria-controls="'collapse1-' + index" @click="toggleAccordion(1, index)">
+                                <div v-for="(item, index) in accordions1" :key="index" class="accordion-item">  <!-- Ciclo per la lunghezza della prima lista -->
+                                    <p class="accordion-header" :id="'heading1-' + index">                              <!-- Ogni elemento dell'accordion deve avere un identificativo -->
+                                    <button class="accordion-elem" :class="{ 'text-red': activeAccordion1 === index }" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse1-' + index" aria-expanded="false" :aria-controls="'collapse1-' + index" @click="toggleAccordion(1, index)"> <!-- Al click attivo la funzione -->
                                         {{ item.title }}
                                         <i class="fa-solid" :class=" activeAccordion1 === index ? 'fa-minus' : 'fa-plus'"></i>
                                     </button>
@@ -385,7 +385,7 @@ h1 , h4 {
 /*     Fourth-Section (FAQ)   */
 .fourth-section {
     margin: 10px;
-    min-height: 80vh;
+    min-height: 600px;
      
     .accordion {
 
