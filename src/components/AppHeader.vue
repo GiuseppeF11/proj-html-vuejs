@@ -752,7 +752,6 @@ background-color:#BF1C2D;
                 min-height: 200px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
-                position: fixed; top: 220px;
                 
                 &:hover {
                     transition: 3s;
