@@ -748,7 +748,7 @@ background-color:#BF1C2D;
                 display: none;
                 top: 220px;
                 background-color: #f1f1f1;
-                width: 100vw;
+                width: 100%;
                 min-height: 200px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
